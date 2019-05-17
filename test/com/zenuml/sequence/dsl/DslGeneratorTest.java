@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class DslGeneratorTest {
 
-    private String readUmlFile(String file){
+    private String readUmlFile(String file) {
         InputStream inputStream = getClass().getResourceAsStream(file + ".zenuml");
         try {
             return new String(StreamUtils.getBytes(inputStream));
@@ -19,19 +19,21 @@ public class DslGeneratorTest {
         }
         return null;
     }
+
     @Test
-    public void test_generator() {
-        DslNode root=new FunctionNode("RootClass","function(a1,a2)");
-        StringBuffer dsl=new StringBuffer();
+    public void test_empty() {
+        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        StringBuffer dsl = new StringBuffer();
         root.toDsl(dsl);
-        assertEquals(readUmlFile("file1"),dsl.toString());
+        assertEquals(readUmlFile("file1"), dsl.toString());
     }
+
     @Test
-    public void test_has_child() {
-        DslNode root=new FunctionNode("RootClass","function(a1,a2)");
-        root.addChild(new FunctionNode("RootClass","function2(a1,a2)"));
-        StringBuffer dsl=new StringBuffer();
+    public void test_one_function_child() {
+        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        root.addChild(new FunctionNode("RootClass", "function2(a1,a2)"));
+        StringBuffer dsl = new StringBuffer();
         root.toDsl(dsl);
-        assertEquals(readUmlFile("file2"),dsl.toString());
+        assertEquals(readUmlFile("file2"), dsl.toString());
     }
 }
