@@ -49,6 +49,6 @@ public class DslGeneratorTest {
         condition.addChild(function1);
         condition.addElse(function2);
         root.addChild(condition);
-
+        checkDslResult(root,"file3");
     }
 }
