@@ -21,7 +21,7 @@ public class DslGeneratorTest {
     }
     @Test
     public void test_generator() {
-        
+        System.out.println(readUmlFile("file1"));
         DslNode root=new FunctionNode("RootClass","function(a1,a2)");
         StringBuffer dsl=new StringBuffer();
         root.toDsl(dsl);
