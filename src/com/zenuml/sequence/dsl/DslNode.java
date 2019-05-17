@@ -1,8 +1,8 @@
 package com.zenuml.sequence.dsl;
 
 public class DslNode {
-    private String className;
-    private String functionName;
+    private final String className;
+    private final String functionName;
 
     public DslNode(String className, String functionName) {
         this.className = className;
