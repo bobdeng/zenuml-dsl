@@ -21,11 +21,10 @@ public class DslGeneratorTest {
     }
     @Test
     public void test_generator() {
-        System.out.println(readUmlFile("file1"));
         DslNode root=new FunctionNode("RootClass","function(a1,a2)");
         StringBuffer dsl=new StringBuffer();
         root.toDsl(dsl);
-        assertEquals("RootClass.function(a1,a2);\n",dsl.toString());
+        assertEquals(readUmlFile("file1"),dsl.toString());
     }
     @Test
     public void test_has_child() {

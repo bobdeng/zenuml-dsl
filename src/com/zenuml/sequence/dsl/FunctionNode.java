@@ -22,7 +22,7 @@ public class FunctionNode implements DslNode {
         output.append(className);
         output.append(".");
         output.append(functionName);
-        if (children.size() == 0) {
+        if (children.size() == 0 && level>0) {
             output.append(";\n");
         } else {
             output.append("{\n");
