@@ -9,10 +9,11 @@ public class ConditionNode extends BaseNode implements DslNode {
     private List<DslNode> elseCondition;
     private int level;
 
-    public ConditionNode(String condition) {
+    public ConditionNode(String condition,DslNode parent) {
         this.condition = condition;
         ifCondition = new ArrayList<>();
         elseCondition = new ArrayList<>();
+        this.parent=parent;
     }
 
     @Override
