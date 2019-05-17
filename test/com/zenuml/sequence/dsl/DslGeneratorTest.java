@@ -23,18 +23,20 @@ public class DslGeneratorTest {
     @Test
     public void test_empty() {
         DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
-        StringBuffer dsl = new StringBuffer();
-        root.toDsl(dsl);
-        assertEquals(readUmlFile("file1"), dsl.toString());
+        checkDslResult(root,"file1");
     }
 
     @Test
     public void test_one_function_child() {
         DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
         root.addChild(new FunctionNode("RootClass", "function2(a1,a2)"));
+        checkDslResult(root,"file2");
+    }
+
+    private void checkDslResult(DslNode root,String file) {
         StringBuffer dsl = new StringBuffer();
         root.toDsl(dsl);
-        assertEquals(readUmlFile("file2"), dsl.toString());
+        assertEquals(readUmlFile(file), dsl.toString());
     }
 
     @Test
@@ -47,6 +49,6 @@ public class DslGeneratorTest {
         condition.addChild(function1);
         condition.addElse(function2);
         root.addChild(condition);
-        
+
     }
 }
