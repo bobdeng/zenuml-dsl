@@ -36,4 +36,10 @@ public class DslGeneratorTest {
         root.toDsl(dsl);
         assertEquals(readUmlFile("file2"), dsl.toString());
     }
+
+    @Test
+    public void test_has_condition_child() {
+        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        
+    }
 }
