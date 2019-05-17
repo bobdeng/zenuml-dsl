@@ -40,6 +40,7 @@ public class DslGeneratorTest {
     @Test
     public void test_has_condition_child() {
         DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        DslNode condition=new ConditionNode();
 
     }
 }
