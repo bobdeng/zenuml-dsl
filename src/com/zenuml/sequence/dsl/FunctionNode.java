@@ -7,11 +7,13 @@ public class FunctionNode implements DslNode {
     private final String className;
     private final String functionName;
     private List<DslNode> children;
+    private int level;
 
     public FunctionNode(String className, String functionName) {
         this.className = className;
         this.functionName = functionName;
         this.children=new ArrayList<>();
+        this.level=0;
     }
 
     @Override
@@ -26,6 +28,7 @@ public class FunctionNode implements DslNode {
 
     @Override
     public void addChild(FunctionNode node) {
+        node.level=this.level+1;
         children.add(node);
     }
 }
