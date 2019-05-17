@@ -25,7 +25,11 @@ public class FunctionNode implements DslNode {
         output.append("  RootClass.function2(a1,a2);\n");
         output.append("}");
     }
-
+    private void printIndent(StringBuffer output){
+        for(int i=0;i<level;i++){
+            output.append("  ");
+        }
+    }
     @Override
     public void addChild(FunctionNode node) {
         node.level=this.level+1;
