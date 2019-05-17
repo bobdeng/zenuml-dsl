@@ -6,16 +6,21 @@ public abstract class BaseNode implements DslNode {
 
     @Override
     public void setLevel(int level) {
-        this.level=level;
+        this.level = level;
     }
 
-    protected boolean isRoot(){
-        return level==0;
+    protected boolean isRoot() {
+        return level == 0;
     }
 
-    public void printIndent(StringBuffer output) {
+    protected void printIndent(StringBuffer output) {
         for (int i = 0; i < level; i++) {
             output.append("  ");
         }
+    }
+
+
+    protected int getNextLevel() {
+        return level + 1;
     }
 }

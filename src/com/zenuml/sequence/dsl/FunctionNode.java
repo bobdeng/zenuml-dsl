@@ -32,7 +32,7 @@ public class FunctionNode extends BaseNode implements DslNode {
 
     @Override
     public void addChild(DslNode node) {
-        node.setLevel(this.level + 1);
+        node.setLevel(getNextLevel());
         children.add(node);
     }
 
