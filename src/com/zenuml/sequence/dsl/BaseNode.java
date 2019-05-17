@@ -9,6 +9,9 @@ public abstract class BaseNode implements DslNode {
         this.level=level;
     }
 
+    protected boolean isRoot(){
+        return level==0;
+    }
 
     public void printIndent(StringBuffer output) {
         for (int i = 0; i < level; i++) {
