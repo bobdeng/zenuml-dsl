@@ -12,8 +12,8 @@ public class FunctionNode implements DslNode {
     public FunctionNode(String className, String functionName) {
         this.className = className;
         this.functionName = functionName;
-        this.children=new ArrayList<>();
-        this.level=0;
+        this.children = new ArrayList<>();
+        this.level = 0;
     }
 
     @Override
@@ -22,23 +22,25 @@ public class FunctionNode implements DslNode {
         output.append(className);
         output.append(".");
         output.append(functionName);
-        if(children.size()==0){
+        if (children.size() == 0) {
             output.append(";\n");
-        }else {
+        } else {
             output.append("{\n");
             children.forEach(dslNode -> dslNode.toDsl(output));
             printIndent(output);
             output.append("}");
         }
     }
-    private void printIndent(StringBuffer output){
-        for(int i=0;i<level;i++){
+
+    private void printIndent(StringBuffer output) {
+        for (int i = 0; i < level; i++) {
             output.append("  ");
         }
     }
+
     @Override
     public void addChild(FunctionNode node) {
-        node.level=this.level+1;
+        node.level = this.level + 1;
         children.add(node);
     }
 }
