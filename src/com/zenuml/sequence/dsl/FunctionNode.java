@@ -15,6 +15,7 @@ public class FunctionNode implements DslNode {
         output.append(".");
         output.append(functionName);
         output.append("{\n");
+        output.append("  RootClass.function2(a1,a2);\n");
         output.append("}");
     }
 

@@ -20,6 +20,7 @@ public class DslGeneratorTest {
         StringBuffer dsl=new StringBuffer();
         root.toDsl(dsl);
         assertEquals("RootClass.function(a1,a2){\n" +
+                "  RootClass.function2(a1,a2);\n" +
                 "}",dsl.toString());
     }
 }
