@@ -3,17 +3,15 @@ package com.zenuml.sequence.dsl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FunctionNode implements DslNode {
+public class FunctionNode extends BaseNode implements DslNode {
     private final String className;
     private final String functionName;
     private List<DslNode> children;
-    private int level;
 
     public FunctionNode(String className, String functionName) {
         this.className = className;
         this.functionName = functionName;
         this.children = new ArrayList<>();
-        this.level = 0;
     }
 
     @Override
@@ -32,20 +30,10 @@ public class FunctionNode implements DslNode {
         }
     }
 
-    private void printIndent(StringBuffer output) {
-        for (int i = 0; i < level; i++) {
-            output.append("  ");
-        }
-    }
-
     @Override
     public void addChild(DslNode node) {
         node.setLevel(this.level + 1);
         children.add(node);
     }
 
-    @Override
-    public void setLevel(int level) {
-        this.level=level;
-    }
 }
