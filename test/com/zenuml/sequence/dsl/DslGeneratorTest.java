@@ -1,7 +1,9 @@
 package com.zenuml.sequence.dsl;
 
+import org.apache.log4j.lf5.util.StreamUtils;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 import static org.junit.Assert.assertEquals;
@@ -10,6 +12,11 @@ public class DslGeneratorTest {
 
     private String readUmlFile(String file){
         InputStream inputStream = getClass().getResourceAsStream(file + ".zenuml");
+        try {
+            return new String(StreamUtils.getBytes(inputStream));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return null;
     }
     @Test
