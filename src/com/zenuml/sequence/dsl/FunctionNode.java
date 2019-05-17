@@ -11,7 +11,10 @@ public class FunctionNode implements DslNode {
 
     @Override
     public void toDsl(StringBuffer output) {
-        output.append("RootClass.function(a1,a2){\n" +
-                "}");
+        output.append(className);
+        output.append(".");
+        output.append(functionName);
+        output.append("{\n");
+        output.append("}");
     }
 }
