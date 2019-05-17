@@ -17,4 +17,9 @@ public class FunctionNode implements DslNode {
         output.append("{\n");
         output.append("}");
     }
+
+    @Override
+    public void addChild(FunctionNode rootClass) {
+
+    }
 }
