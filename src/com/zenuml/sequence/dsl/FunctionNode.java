@@ -26,7 +26,7 @@ public class FunctionNode implements DslNode {
             output.append(";\n");
         }else {
             output.append("{\n");
-            output.append("  RootClass.function2(a1,a2);\n");
+            children.forEach(dslNode -> dslNode.toDsl(output));
             printIndent(output);
             output.append("}");
         }
