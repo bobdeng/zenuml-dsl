@@ -1,7 +1,7 @@
 package com.zenuml.sequence.dsl;
 
 public abstract class BaseNode implements DslNode {
-    protected int level;
+    private int level;
 
 
     @Override

@@ -3,7 +3,7 @@ package com.zenuml.sequence.dsl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConditionNode implements DslNode {
+public class ConditionNode extends BaseNode implements DslNode {
     private String condition;
     private List<DslNode> ifCondition;
     private List<DslNode> elseCondition;
@@ -28,11 +28,6 @@ public class ConditionNode implements DslNode {
     @Override
     public void addChild(DslNode rootClass) {
 
-    }
-
-    @Override
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public void addElse(DslNode node) {
