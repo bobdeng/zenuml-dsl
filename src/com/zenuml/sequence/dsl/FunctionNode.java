@@ -22,10 +22,14 @@ public class FunctionNode implements DslNode {
         output.append(className);
         output.append(".");
         output.append(functionName);
-        output.append("{\n");
-        output.append("  RootClass.function2(a1,a2);\n");
-        printIndent(output);
-        output.append("}");
+        if(children.size()==0){
+            output.append(";\n");
+        }else {
+            output.append("{\n");
+            output.append("  RootClass.function2(a1,a2);\n");
+            printIndent(output);
+            output.append("}");
+        }
     }
     private void printIndent(StringBuffer output){
         for(int i=0;i<level;i++){
