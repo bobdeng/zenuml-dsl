@@ -41,6 +41,9 @@ public class DslGeneratorTest {
     public void test_has_condition_child() {
         DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
         DslNode function1 = new FunctionNode("Class1","function");
+        DslNode function2 = new FunctionNode("Class2","function");
+        DslNode function3 = new FunctionNode("Class3","function");
+        //DslNode condition=new ConditionNode("condition");
 
     }
 }
