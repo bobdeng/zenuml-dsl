@@ -43,7 +43,8 @@ public class DslGeneratorTest {
         DslNode function1 = new FunctionNode("Class1","function");
         DslNode function2 = new FunctionNode("Class2","function");
         DslNode function3 = new FunctionNode("Class3","function");
-        DslNode condition=new ConditionNode("condition");
-
+        ConditionNode condition=new ConditionNode("condition");
+        condition.addChild(function2);
+        condition.addElse(function3);
     }
 }
