@@ -31,6 +31,7 @@ public class ConditionNode extends BaseNode implements DslNode {
     }
 
     public void addElse(DslNode node) {
+        node.setLevel(getNextLevel());
         elseCondition.add(node);
     }
 }
