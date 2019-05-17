@@ -25,7 +25,7 @@ public class FunctionNode implements DslNode {
     }
 
     @Override
-    public void addChild(FunctionNode rootClass) {
-
+    public void addChild(FunctionNode node) {
+        children.add(node);
     }
 }
