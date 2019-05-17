@@ -1,12 +1,13 @@
 package com.zenuml.sequence.dsl;
 
+import java.util.List;
+
 public class ConditionNode implements DslNode {
     private String condition;
-    private DslNode ifCondition;
+    private List<DslNode> ifCondition;
 
-    public ConditionNode(String condition, DslNode ifCondition) {
+    public ConditionNode(String condition) {
         this.condition = condition;
-        this.ifCondition = ifCondition;
     }
 
     @Override
