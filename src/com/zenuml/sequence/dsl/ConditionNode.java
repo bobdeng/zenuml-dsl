@@ -19,7 +19,9 @@ public class ConditionNode extends BaseNode implements DslNode {
     public void toDsl(StringBuffer output) {
         printIndent(output);
         output.append("if(");
-        output.append("condition){\n" +
+        output.append(condition);
+        output.append("){\n");
+        output.append(
                 "    Class1.function();\n" +
                 "  } else {\n" +
                 "    Class2.function();\n" +
