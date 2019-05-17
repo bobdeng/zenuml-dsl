@@ -7,4 +7,5 @@ public interface DslNode {
     void addChild(DslNode rootClass);
 
     void setLevel(int level);
+
 }

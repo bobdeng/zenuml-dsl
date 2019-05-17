@@ -1,6 +1,8 @@
 package com.zenuml.sequence.dsl;
 
 public abstract class BaseNode implements DslNode {
+    private DslNode parent;
+
     private int level;
 
 
