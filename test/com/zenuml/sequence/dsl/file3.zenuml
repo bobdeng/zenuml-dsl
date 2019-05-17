@@ -1,6 +1,6 @@
 RootClass.function(a1,a2){
   if(condition){
-    RootClass.function2(a1,a2);
+    Class1.function();
   } else {
     Class2.function();
   }
