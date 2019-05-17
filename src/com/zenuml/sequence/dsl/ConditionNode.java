@@ -7,6 +7,7 @@ public class ConditionNode implements DslNode {
     private String condition;
     private List<DslNode> ifCondition;
     private ConditionNode elseCondition;
+    private int level;
     public ConditionNode(String condition) {
         this.condition = condition;
         ifCondition = new ArrayList<>();
@@ -18,7 +19,12 @@ public class ConditionNode implements DslNode {
     }
 
     @Override
-    public void addChild(FunctionNode rootClass) {
+    public void addChild(DslNode rootClass) {
 
+    }
+
+    @Override
+    public void setLevel(int level) {
+        this.level=level;
     }
 }

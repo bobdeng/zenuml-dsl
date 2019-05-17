@@ -39,8 +39,13 @@ public class FunctionNode implements DslNode {
     }
 
     @Override
-    public void addChild(FunctionNode node) {
-        node.level = this.level + 1;
+    public void addChild(DslNode node) {
+        node.setLevel(this.level + 1);
         children.add(node);
+    }
+
+    @Override
+    public void setLevel(int level) {
+        this.level=level;
     }
 }
