@@ -2,12 +2,19 @@ package com.zenuml.sequence.dsl;
 
 import org.junit.Test;
 
+import java.io.InputStream;
+
 import static org.junit.Assert.assertEquals;
 
 public class DslGeneratorTest {
 
+    private String readUmlFile(String file){
+        InputStream inputStream = getClass().getResourceAsStream(file + ".zenuml");
+        return null;
+    }
     @Test
     public void test_generator() {
+        System.out.println(readUmlFile("file1"));
         DslNode root=new FunctionNode("RootClass","function(a1,a2)");
         StringBuffer dsl=new StringBuffer();
         root.toDsl(dsl);
