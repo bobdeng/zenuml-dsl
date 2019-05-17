@@ -32,9 +32,6 @@ public class DslGeneratorTest {
         root.addChild(new FunctionNode("RootClass","function2(a1,a2)"));
         StringBuffer dsl=new StringBuffer();
         root.toDsl(dsl);
-        System.out.println(dsl.toString());
-        assertEquals("RootClass.function(a1,a2){\n" +
-                "  RootClass.function2(a1,a2);\n" +
-                "}",dsl.toString());
+        assertEquals(readUmlFile("file2"),dsl.toString());
     }
 }
