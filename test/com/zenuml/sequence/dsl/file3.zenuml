@@ -1,0 +1,7 @@
+RootClass.function(a1,a2){
+  if(condition){
+    RootClass.function2(a1,a2);
+  } else {
+    Class2.function();
+  }
+}
