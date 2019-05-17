@@ -18,11 +18,13 @@ public class FunctionNode implements DslNode {
 
     @Override
     public void toDsl(StringBuffer output) {
+        printIndent(output);
         output.append(className);
         output.append(".");
         output.append(functionName);
         output.append("{\n");
         output.append("  RootClass.function2(a1,a2);\n");
+        printIndent(output);
         output.append("}");
     }
     private void printIndent(StringBuffer output){
