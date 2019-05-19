@@ -5,12 +5,11 @@ import java.util.List;
 
 public class ConditionNode extends BaseNode implements DslNode {
     private String condition;
-    private List<DslNode> ifCondition;
     private List<DslNode> elseCondition;
 
     public ConditionNode(String condition,DslNode parent) {
+        super();
         this.condition = condition;
-        ifCondition = new ArrayList<>();
         elseCondition = new ArrayList<>();
         this.parent=parent;
     }
@@ -31,7 +30,7 @@ public class ConditionNode extends BaseNode implements DslNode {
     @Override
     public DslNode addChild(DslNode node) {
         node.setLevel(getNextLevel());
-        ifCondition.add(node);
+        children.add(node);
         return node;
     }
 
