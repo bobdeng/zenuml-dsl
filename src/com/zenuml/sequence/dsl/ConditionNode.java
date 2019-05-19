@@ -23,7 +23,8 @@ public class ConditionNode extends BaseNode {
         printChindren(output);
         if(elseCondition.size()>0){
             printIndent(output);
-            output.append("} else {\n");
+            output.append("}");
+            output.append(" else {\n");
             elseCondition.forEach(dslNode -> dslNode.toDsl(output));
         }
         printIndent(output);
