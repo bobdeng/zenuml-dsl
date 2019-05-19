@@ -30,7 +30,6 @@ public class ConditionNode extends BaseNode implements DslNode {
     @Override
     public DslNode addChild(DslNode node) {
         node.setLevel(getNextLevel());
-        System.out.println(getNextLevel());
         children.add(node);
         return node;
     }
