@@ -9,6 +9,7 @@ public class FunctionNode extends BaseNode implements DslNode {
     private final String result;
 
     public FunctionNode(String className, String functionName) {
+        super();
         this.className = className;
         this.functionName = functionName;
         this.children = new ArrayList<>();
