@@ -57,4 +57,8 @@ public class DslGeneratorTest {
         root.addChild(new FunctionNode("RootClass", "function2(a1,a2)","result"));
         checkDslResult(root,"file4");
     }
+    @Test
+    public void test_loop(){
+        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+    }
 }
