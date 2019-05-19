@@ -1,13 +1,17 @@
 package com.zenuml.sequence.dsl;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConditionNode extends BaseNode {
     private String condition;
-    private ElseNode elseNode;
+    private List<ElseNode> elseNodes;
 
     public ConditionNode(String condition) {
         super();
         this.condition = condition;
+        elseNodes=new ArrayList<>();
     }
 
     @Override
@@ -19,12 +23,12 @@ public class ConditionNode extends BaseNode {
         printChindren(output);
         printIndent(output);
         output.append("}\n");
-        elseNode.toDsl(output);
+        elseNodes.forEach(elseNode -> elseNode.toDsl(output));
     }
 
 
     public void setElse(ElseNode elseNode) {
         elseNode.parent=this.parent;
-        this.elseNode = elseNode;
+        this.elseNodes.add(elseNode);
     }
 }
