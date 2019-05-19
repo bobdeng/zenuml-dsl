@@ -34,6 +34,7 @@ public class ConditionNode extends BaseNode {
 
 
     public void addElse(BaseNode node) {
+        node.parent=this;
         elseCondition.add(node);
     }
 
