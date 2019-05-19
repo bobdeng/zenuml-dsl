@@ -1,9 +1,6 @@
 package com.zenuml.sequence.dsl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class FunctionNode extends BaseNode {
+public class FunctionNode extends DslNode {
     private final String className;
     private final String functionName;
     private final String result;

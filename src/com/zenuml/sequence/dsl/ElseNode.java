@@ -1,6 +1,6 @@
 package com.zenuml.sequence.dsl;
 
-public class ElseNode extends BaseNode {
+public class ElseNode extends DslNode {
     private final String condition;
 
     public ElseNode() {

@@ -3,11 +3,11 @@ package com.zenuml.sequence.dsl;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseNode{
-    protected BaseNode parent;
-    List<BaseNode> children;
+public abstract class DslNode {
+    protected DslNode parent;
+    List<DslNode> children;
 
-    public BaseNode() {
+    public DslNode() {
         children=new ArrayList<>();
     }
 
@@ -22,7 +22,7 @@ public abstract class BaseNode{
         }
     }
 
-    public final BaseNode addChild(BaseNode node) {
+    public final DslNode addChild(DslNode node) {
         children.add(node);
         node.parent=this;
         return node;
@@ -37,7 +37,7 @@ public abstract class BaseNode{
 
     protected int getLevel() {
         int level=0;
-        BaseNode node=this;
+        DslNode node=this;
         while(node.parent!=null){
             level++;
             node=node.parent;

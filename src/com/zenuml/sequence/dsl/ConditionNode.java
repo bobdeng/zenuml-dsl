@@ -4,7 +4,7 @@ package com.zenuml.sequence.dsl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConditionNode extends BaseNode {
+public class ConditionNode extends DslNode {
     private String condition;
     private List<ElseNode> elseNodes;
 
