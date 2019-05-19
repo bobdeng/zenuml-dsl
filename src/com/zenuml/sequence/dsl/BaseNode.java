@@ -1,5 +1,6 @@
 package com.zenuml.sequence.dsl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseNode implements DslNode {
@@ -7,6 +8,9 @@ public abstract class BaseNode implements DslNode {
     List<DslNode> children;
     private int level;
 
+    public BaseNode() {
+        children=new ArrayList<>();
+    }
 
     @Override
     public void setLevel(int level) {
