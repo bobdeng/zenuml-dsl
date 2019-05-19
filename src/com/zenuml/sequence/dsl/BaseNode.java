@@ -22,6 +22,7 @@ public abstract class BaseNode implements DslNode {
     }
 
     protected void printIndent(StringBuffer output) {
+        System.out.println(level);
         for (int i = 0; i < level; i++) {
             output.append("  ");
         }
