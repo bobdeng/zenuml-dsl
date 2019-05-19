@@ -3,7 +3,7 @@ package com.zenuml.sequence.dsl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FunctionNode extends BaseNode implements DslNode {
+public class FunctionNode extends BaseNode {
     private final String className;
     private final String functionName;
     private final String result;
@@ -42,7 +42,7 @@ public class FunctionNode extends BaseNode implements DslNode {
         }
     }
     @Override
-    public DslNode addChild(DslNode node) {
+    public BaseNode addChild(BaseNode node) {
         node.setLevel(getNextLevel());
         children.add(node);
         return node;

@@ -22,18 +22,18 @@ public class DslGeneratorTest {
 
     @Test
     public void test_empty() {
-        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        BaseNode root = new FunctionNode("RootClass", "function(a1,a2)");
         checkDslResult(root,"file1");
     }
 
     @Test
     public void test_one_function_child() {
-        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        BaseNode root = new FunctionNode("RootClass", "function(a1,a2)");
         root.addChild(new FunctionNode("RootClass", "function2(a1,a2)"));
         checkDslResult(root,"file2");
     }
 
-    private void checkDslResult(DslNode root,String file) {
+    private void checkDslResult(BaseNode root,String file) {
         StringBuffer dsl = new StringBuffer();
         root.toDsl(dsl);
         assertEquals(readUmlFile(file), dsl.toString());
@@ -41,10 +41,10 @@ public class DslGeneratorTest {
 
     @Test
     public void test_has_condition_child() {
-        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
-        DslNode function1 = new FunctionNode("Class1","function()");
-        DslNode function2 = new FunctionNode("Class2","function()");
-        ConditionNode condition = (ConditionNode)root.addChild(new ConditionNode("condition", root));
+        BaseNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        BaseNode function1 = new FunctionNode("Class1","function()");
+        BaseNode function2 = new FunctionNode("Class2","function()");
+        ConditionNode condition = (ConditionNode)root.addChild(new ConditionNode("condition"));
         condition.addChild(function1);
         condition.addElse(function2);
         checkDslResult(root,"file3");
@@ -52,13 +52,13 @@ public class DslGeneratorTest {
 
     @Test
     public void test_function_has_return(){
-        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        BaseNode root = new FunctionNode("RootClass", "function(a1,a2)");
         root.addChild(new FunctionNode("RootClass", "function2(a1,a2)","result"));
         checkDslResult(root,"file4");
     }
     @Test
     public void test_loop(){
-        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        BaseNode root = new FunctionNode("RootClass", "function(a1,a2)");
         root.addChild(new LoopNode("condition"))
                 .addChild(new FunctionNode("class2", "function()"));
         checkDslResult(root,"file_loop");
@@ -66,7 +66,7 @@ public class DslGeneratorTest {
 
     @Test
     public void test_else_if(){
-        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
-        
+        BaseNode root = new FunctionNode("RootClass", "function(a1,a2)");
+
     }
 }

@@ -3,15 +3,14 @@ package com.zenuml.sequence.dsl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConditionNode extends BaseNode implements DslNode {
+public class ConditionNode extends BaseNode {
     private String condition;
-    private List<DslNode> elseCondition;
+    private List<BaseNode> elseCondition;
 
-    public ConditionNode(String condition,DslNode parent) {
+    public ConditionNode(String condition) {
         super();
         this.condition = condition;
         elseCondition = new ArrayList<>();
-        this.parent=parent;
     }
 
     @Override
@@ -31,13 +30,13 @@ public class ConditionNode extends BaseNode implements DslNode {
     }
 
     @Override
-    public DslNode addChild(DslNode node) {
+    public BaseNode addChild(BaseNode node) {
         node.setLevel(getNextLevel());
         children.add(node);
         return node;
     }
 
-    public void addElse(DslNode node) {
+    public void addElse(BaseNode node) {
         node.setLevel(getNextLevel());
         elseCondition.add(node);
     }
