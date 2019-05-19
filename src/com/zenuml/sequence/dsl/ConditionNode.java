@@ -1,17 +1,13 @@
 package com.zenuml.sequence.dsl;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ConditionNode extends BaseNode {
     private String condition;
-    private List<BaseNode> elseCondition;
     private ElseNode elseNode;
 
     public ConditionNode(String condition) {
         super();
         this.condition = condition;
-        elseCondition = new ArrayList<>();
     }
 
     @Override
@@ -26,11 +22,6 @@ public class ConditionNode extends BaseNode {
         elseNode.toDsl(output);
     }
 
-
-    public void addElse(BaseNode node) {
-        node.parent=this;
-        elseCondition.add(node);
-    }
 
     public void setElse(ElseNode elseNode) {
         elseNode.parent=this.parent;
