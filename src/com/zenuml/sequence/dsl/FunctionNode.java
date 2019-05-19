@@ -41,11 +41,5 @@ public class FunctionNode extends BaseNode {
             output.append("}");
         }
     }
-    @Override
-    public BaseNode addChild(BaseNode node) {
-        node.setLevel(getNextLevel());
-        children.add(node);
-        return node;
-    }
 
 }
