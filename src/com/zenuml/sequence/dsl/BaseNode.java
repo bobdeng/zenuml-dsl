@@ -21,7 +21,6 @@ public abstract class BaseNode{
     }
 
     protected void printIndent(StringBuffer output) {
-        System.out.println(getLevel());
         for (int i = 0; i < getLevel(); i++) {
             output.append("  ");
         }
@@ -48,12 +47,10 @@ public abstract class BaseNode{
     protected int getLevel() {
         int level=0;
         BaseNode node=this;
-        System.out.println(node.parent);
         while(node.parent!=null){
             level++;
             node=node.parent;
         }
-        System.out.println(level);
         return level;
     }
 }
