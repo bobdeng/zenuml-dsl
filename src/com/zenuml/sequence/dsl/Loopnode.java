@@ -18,9 +18,5 @@ public class Loopnode extends BaseNode implements DslNode {
         printIndent(output);
         output.append("}");
     }
-
-    @Override
-    public void setLevel(int level) {
-
-    }
+    
 }
