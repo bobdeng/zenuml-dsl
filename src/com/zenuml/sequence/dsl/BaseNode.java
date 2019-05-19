@@ -47,7 +47,7 @@ public abstract class BaseNode{
     protected int getLevel() {
         int level=0;
         BaseNode node=this;
-        System.out.println(node);
+        System.out.println(node.parent);
         while(node.parent!=null){
             level++;
             node=node.parent;
