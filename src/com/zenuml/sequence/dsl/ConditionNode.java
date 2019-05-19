@@ -24,10 +24,10 @@ public class ConditionNode extends BaseNode implements DslNode {
         if(elseCondition.size()>0){
             printIndent(output);
             output.append("} else {\n");
+            elseCondition.forEach(dslNode -> dslNode.toDsl(output));
+            printIndent(output);
+            output.append("}\n");
         }
-        elseCondition.forEach(dslNode -> dslNode.toDsl(output));
-        output.append(
-                "  }\n");
     }
 
     @Override
