@@ -1,9 +1,9 @@
 package com.zenuml.sequence.dsl;
 
-public class Loopnode extends BaseNode implements DslNode {
+public class LoopNode extends BaseNode implements DslNode {
     private String conditon;
 
-    public Loopnode(String condition) {
+    public LoopNode(String condition) {
         super();
         this.conditon = condition;
     }
