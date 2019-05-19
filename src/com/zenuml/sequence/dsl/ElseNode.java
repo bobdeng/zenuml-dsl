@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ElseNode extends BaseNode {
-
+    private String conditon;
+    
     public ElseNode(String condition) {
         super();
     }
