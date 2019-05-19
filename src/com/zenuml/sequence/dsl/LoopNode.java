@@ -1,18 +1,18 @@
 package com.zenuml.sequence.dsl;
 
 public class LoopNode extends BaseNode {
-    private String conditon;
+    private String condition;
 
     public LoopNode(String condition) {
         super();
-        this.conditon = condition;
+        this.condition = condition;
     }
 
     @Override
     public void toDsl(StringBuffer output) {
         printIndent(output);
         output.append("while(");
-        output.append(conditon);
+        output.append(condition);
         output.append("){\n");
         printChindren(output);
         printIndent(output);
