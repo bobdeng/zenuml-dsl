@@ -34,6 +34,11 @@ public abstract class BaseNode implements DslNode {
         return node;
     }
 
+
+    protected void printChindren(StringBuffer output) {
+        children.forEach(dslNode -> dslNode.toDsl(output));
+    }
+
     protected int getNextLevel() {
         return level + 1;
     }

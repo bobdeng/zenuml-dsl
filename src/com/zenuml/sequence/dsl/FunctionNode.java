@@ -36,12 +36,11 @@ public class FunctionNode extends BaseNode implements DslNode {
             output.append(";\n");
         } else {
             output.append("{\n");
-            children.forEach(dslNode -> dslNode.toDsl(output));
+            printChindren(output);
             printIndent(output);
             output.append("}");
         }
     }
-
     @Override
     public DslNode addChild(DslNode node) {
         node.setLevel(getNextLevel());

@@ -10,7 +10,12 @@ public class Loopnode extends BaseNode implements DslNode {
 
     @Override
     public void toDsl(StringBuffer output) {
-
+        printIndent(output);
+        output.append("while(");
+        output.append(conditon);
+        output.append("){");
+        printIndent(output);
+        output.append("}");
     }
 
     @Override
