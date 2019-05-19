@@ -39,6 +39,7 @@ public class ConditionNode extends BaseNode {
     }
 
     public void setElse(ElseNode elseNode) {
+        elseNode.parent=this.parent;
         this.elseNode = elseNode;
     }
 }
