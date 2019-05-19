@@ -5,7 +5,7 @@ RootClass.function(a1,a2){
   else if(condition2){
     Class2.function();
   }
-  else {
+  else{
     Class3.function();
   }
 }
