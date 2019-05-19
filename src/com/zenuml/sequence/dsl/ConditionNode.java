@@ -25,8 +25,8 @@ public class ConditionNode extends BaseNode implements DslNode {
             printIndent(output);
             output.append("} else {\n");
         }
+        elseCondition.forEach(dslNode -> dslNode.toDsl(output));
         output.append(
-                "    Class2.function();\n" +
                 "  }\n");
     }
 
