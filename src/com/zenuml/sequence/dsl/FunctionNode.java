@@ -9,10 +9,7 @@ public class FunctionNode extends BaseNode {
     private final String result;
 
     public FunctionNode(String className, String functionName) {
-        super();
-        this.className = className;
-        this.functionName = functionName;
-        this.result=null;
+        this(className,functionName,null);
     }
 
     public FunctionNode(String className, String functionName, String result) {

@@ -4,8 +4,7 @@ public class ElseNode extends BaseNode {
     private final String condition;
 
     public ElseNode() {
-        super();
-        this.condition=null;
+        this(null);
     }
 
     public ElseNode(String condition) {
