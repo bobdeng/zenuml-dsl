@@ -21,14 +21,12 @@ public class ConditionNode extends BaseNode {
         output.append(condition);
         output.append("){\n");
         printChindren(output);
+        printIndent(output);
+        output.append("}\n");
         if (elseCondition.size() > 0) {
             printIndent(output);
-            output.append("}");
-            output.append(" else {\n");
+            output.append("else {\n");
             elseCondition.forEach(dslNode -> dslNode.toDsl(output));
-            printIndent(output);
-            output.append("}\n");
-        } else {
             printIndent(output);
             output.append("}\n");
         }

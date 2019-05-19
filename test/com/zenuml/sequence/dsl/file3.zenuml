@@ -1,7 +1,8 @@
 RootClass.function(a1,a2){
   if(condition){
     Class1.function();
-  } else {
+  }
+  else {
     Class2.function();
   }
 }
