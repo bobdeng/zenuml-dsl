@@ -14,6 +14,7 @@ public class Loopnode extends BaseNode implements DslNode {
         output.append("while(");
         output.append(conditon);
         output.append("){");
+        printChindren(output);
         printIndent(output);
         output.append("}");
     }
