@@ -1,19 +1,19 @@
 package com.zenuml.sequence.dsl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ElseNode extends BaseNode {
-    private String conditon;
-    
+    private final String condition;
+
     public ElseNode(String condition) {
         super();
+        this.condition =condition;
     }
 
     @Override
     public void toDsl(StringBuffer output) {
         printIndent(output);
-        output.append("else(");
+        if(condition ==null) {
+            output.append(" else (");
+        }
         printChindren(output);
         output.append("){\n");
 
