@@ -6,18 +6,14 @@ import java.util.List;
 public abstract class BaseNode{
     protected BaseNode parent;
     List<BaseNode> children;
-    private int level;
 
     public BaseNode() {
         children=new ArrayList<>();
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     protected boolean isRoot() {
-        return level == 0;
+        return parent == null;
     }
 
     protected void printIndent(StringBuffer output) {
@@ -27,7 +23,6 @@ public abstract class BaseNode{
     }
 
     public final BaseNode addChild(BaseNode node) {
-        node.setLevel(getNextLevel());
         children.add(node);
         node.parent=this;
         return node;
@@ -38,10 +33,6 @@ public abstract class BaseNode{
 
     protected void printChindren(StringBuffer output) {
         children.forEach(dslNode -> dslNode.toDsl(output));
-    }
-
-    protected int getNextLevel() {
-        return level + 1;
     }
 
     protected int getLevel() {

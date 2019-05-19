@@ -34,12 +34,10 @@ public class ConditionNode extends BaseNode {
 
 
     public void addElse(BaseNode node) {
-        node.setLevel(getNextLevel());
         elseCondition.add(node);
     }
 
     public void setElse(ElseNode elseNode) {
-        elseNode.setLevel(this.getLevel());
         this.elseNode = elseNode;
     }
 }
