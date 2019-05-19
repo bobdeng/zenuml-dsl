@@ -17,7 +17,7 @@ public class ElseNode extends BaseNode {
     public void toDsl(StringBuffer output) {
         printIndent(output);
         if(condition ==null) {
-            output.append(" else {\n");
+            output.append("else {\n");
         }
         printChindren(output);
         printIndent(output);
