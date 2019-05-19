@@ -12,7 +12,6 @@ public class FunctionNode extends BaseNode implements DslNode {
         super();
         this.className = className;
         this.functionName = functionName;
-        this.children = new ArrayList<>();
         this.result=null;
     }
 
