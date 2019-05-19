@@ -1,8 +1,10 @@
 package com.zenuml.sequence.dsl;
 
+import java.util.List;
+
 public abstract class BaseNode implements DslNode {
     protected DslNode parent;
-
+    List<DslNode> children;
     private int level;
 
 
@@ -21,6 +23,12 @@ public abstract class BaseNode implements DslNode {
         }
     }
 
+    @Override
+    public DslNode addChild(DslNode node) {
+        node.setLevel(getNextLevel());
+        children.add(node);
+        return node;
+    }
 
     protected int getNextLevel() {
         return level + 1;
