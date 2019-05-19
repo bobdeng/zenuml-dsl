@@ -18,6 +18,8 @@ public class ElseNode extends BaseNode {
         printIndent(output);
         if(condition ==null) {
             output.append("else {\n");
+        }else{
+            output.append("else if("+condition+"){\n");
         }
         printChindren(output);
         printIndent(output);
