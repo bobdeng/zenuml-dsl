@@ -22,7 +22,7 @@ public abstract class BaseNode{
 
     protected void printIndent(StringBuffer output) {
         System.out.println(getLevel());
-        for (int i = 0; i < level; i++) {
+        for (int i = 0; i < getLevel(); i++) {
             output.append("  ");
         }
     }
