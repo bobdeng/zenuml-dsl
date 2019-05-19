@@ -51,6 +51,7 @@ public abstract class BaseNode{
             level++;
             node=node.parent;
         }
+        System.out.println(level);
         return level;
     }
 }
