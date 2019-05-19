@@ -47,7 +47,7 @@ public class DslGeneratorTest {
         ElseNode elseNode = new ElseNode();
         elseNode.addChild(new FunctionNode("Class2","function()"));
         condition.addChild(function1);
-        condition.setElse(elseNode);
+        condition.addElse(elseNode);
         checkDslResult(root,"file3");
     }
 
@@ -70,6 +70,11 @@ public class DslGeneratorTest {
         BaseNode root = new FunctionNode("RootClass", "function(a1,a2)");
         ConditionNode conditionNode = new ConditionNode("condition");
         ElseNode elseNode = new ElseNode("condition2");
-        conditionNode.setElse(elseNode);
+        elseNode.addChild(new FunctionNode("class2","function()"));
+        ElseNode elseNodeEnd = new ElseNode();
+        elseNodeEnd.addChild(new FunctionNode("class3","function()"));
+        conditionNode.addElse(elseNode);
+        conditionNode.addElse(elseNodeEnd);
+
     }
 }

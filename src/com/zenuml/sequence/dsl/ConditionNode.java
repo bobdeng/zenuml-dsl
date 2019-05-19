@@ -27,7 +27,7 @@ public class ConditionNode extends BaseNode {
     }
 
 
-    public void setElse(ElseNode elseNode) {
+    public void addElse(ElseNode elseNode) {
         elseNode.parent=this.parent;
         this.elseNodes.add(elseNode);
     }
