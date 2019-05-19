@@ -68,6 +68,8 @@ public class DslGeneratorTest {
     @Test
     public void test_else_if(){
         BaseNode root = new FunctionNode("RootClass", "function(a1,a2)");
-
+        ConditionNode conditionNode = new ConditionNode("condition");
+        ElseNode elseNode = new ElseNode("condition2");
+        conditionNode.setElse(elseNode);
     }
 }
