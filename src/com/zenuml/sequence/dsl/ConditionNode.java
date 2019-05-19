@@ -21,8 +21,11 @@ public class ConditionNode extends BaseNode implements DslNode {
         output.append(condition);
         output.append("){\n");
         printChindren(output);
+        if(elseCondition.size()>0){
+            printIndent(output);
+            output.append("} else {\n");
+        }
         output.append(
-                "  } else {\n" +
                 "    Class2.function();\n" +
                 "  }\n");
     }
