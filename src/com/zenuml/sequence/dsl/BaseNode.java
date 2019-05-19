@@ -27,7 +27,7 @@ public abstract class BaseNode{
         }
     }
 
-    public BaseNode addChild(BaseNode node) {
+    public final BaseNode addChild(BaseNode node) {
         node.setLevel(getNextLevel());
         children.add(node);
         node.parent=this;

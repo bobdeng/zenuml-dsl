@@ -25,11 +25,5 @@ public class ElseNode extends BaseNode {
 
     }
 
-    @Override
-    public BaseNode addChild(BaseNode node) {
-        node.setLevel(getNextLevel());
-        children.add(node);
-        return node;
-    }
 
 }

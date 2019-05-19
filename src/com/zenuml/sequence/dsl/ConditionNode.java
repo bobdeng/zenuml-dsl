@@ -32,12 +32,6 @@ public class ConditionNode extends BaseNode {
         }
     }
 
-    @Override
-    public BaseNode addChild(BaseNode node) {
-        node.setLevel(getNextLevel());
-        children.add(node);
-        return node;
-    }
 
     public void addElse(BaseNode node) {
         node.setLevel(getNextLevel());
