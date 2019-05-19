@@ -29,9 +29,10 @@ public class ConditionNode extends BaseNode implements DslNode {
     }
 
     @Override
-    public void addChild(DslNode node) {
+    public DslNode addChild(DslNode node) {
         node.setLevel(getNextLevel());
         ifCondition.add(node);
+        return node;
     }
 
     public void addElse(DslNode node) {

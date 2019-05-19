@@ -44,9 +44,10 @@ public class FunctionNode extends BaseNode implements DslNode {
     }
 
     @Override
-    public void addChild(DslNode node) {
+    public DslNode addChild(DslNode node) {
         node.setLevel(getNextLevel());
         children.add(node);
+        return node;
     }
 
 }

@@ -13,8 +13,8 @@ public class Loopnode extends BaseNode implements DslNode {
     }
 
     @Override
-    public void addChild(DslNode rootClass) {
-
+    public DslNode addChild(DslNode rootClass) {
+        return null;
     }
 
     @Override
