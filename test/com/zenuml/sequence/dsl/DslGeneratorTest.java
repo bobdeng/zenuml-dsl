@@ -63,4 +63,10 @@ public class DslGeneratorTest {
                 .addChild(new FunctionNode("class2", "function()"));
         checkDslResult(root,"file_loop");
     }
+
+    @Test
+    public void test_else_if(){
+        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        
+    }
 }
