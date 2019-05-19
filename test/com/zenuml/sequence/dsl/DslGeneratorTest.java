@@ -60,5 +60,6 @@ public class DslGeneratorTest {
     @Test
     public void test_loop(){
         DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        root.addChild(new Loopnode("condition"));
     }
 }
