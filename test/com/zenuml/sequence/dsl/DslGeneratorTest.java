@@ -61,7 +61,7 @@ public class DslGeneratorTest {
     public void test_loop(){
         DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
         root.addChild(new Loopnode("condition"))
-                .addChild(new FunctionNode("class2", "function2"));
-        //checkDslResult(root,"file_loop");
+                .addChild(new FunctionNode("class2", "function()"));
+        checkDslResult(root,"file_loop");
     }
 }
