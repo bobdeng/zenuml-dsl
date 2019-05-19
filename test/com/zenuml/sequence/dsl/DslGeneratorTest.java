@@ -44,11 +44,17 @@ public class DslGeneratorTest {
         DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
         DslNode function1 = new FunctionNode("Class1","function()");
         DslNode function2 = new FunctionNode("Class2","function()");
-        DslNode function3 = new FunctionNode("Class3","function()");
         ConditionNode condition=new ConditionNode("condition",root);
         condition.addChild(function1);
         condition.addElse(function2);
         root.addChild(condition);
         checkDslResult(root,"file3");
+    }
+
+    @Test
+    public void test_function_has_return(){
+        DslNode root = new FunctionNode("RootClass", "function(a1,a2)");
+        root.addChild(new FunctionNode("RootClass", "function2(a1,a2)","result"));
+        checkDslResult(root,"file4");
     }
 }
