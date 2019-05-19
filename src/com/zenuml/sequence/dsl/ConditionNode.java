@@ -21,14 +21,17 @@ public class ConditionNode extends BaseNode {
         output.append(condition);
         output.append("){\n");
         printChindren(output);
-        if(elseCondition.size()>0){
+        if (elseCondition.size() > 0) {
             printIndent(output);
             output.append("}");
             output.append(" else {\n");
             elseCondition.forEach(dslNode -> dslNode.toDsl(output));
+            printIndent(output);
+            output.append("}\n");
+        } else {
+            printIndent(output);
+            output.append("}\n");
         }
-        printIndent(output);
-        output.append("}\n");
     }
 
     @Override
@@ -43,8 +46,8 @@ public class ConditionNode extends BaseNode {
         elseCondition.add(node);
     }
 
-    public void setElse(ElseNode elseNode){
+    public void setElse(ElseNode elseNode) {
         elseNode.setLevel(this.getLevel());
-        this.elseNode=elseNode;
+        this.elseNode = elseNode;
     }
 }
