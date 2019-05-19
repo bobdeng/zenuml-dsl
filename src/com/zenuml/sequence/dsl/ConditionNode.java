@@ -20,8 +20,8 @@ public class ConditionNode extends BaseNode implements DslNode {
         output.append("if(");
         output.append(condition);
         output.append("){\n");
+        printChindren(output);
         output.append(
-                "    Class1.function();\n" +
                 "  } else {\n" +
                 "    Class2.function();\n" +
                 "  }\n");
