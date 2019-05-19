@@ -43,4 +43,8 @@ public abstract class BaseNode{
     protected int getNextLevel() {
         return level + 1;
     }
+
+    protected int getLevel() {
+        return level;
+    }
 }
