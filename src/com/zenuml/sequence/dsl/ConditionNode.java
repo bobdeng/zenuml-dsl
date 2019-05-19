@@ -6,6 +6,7 @@ import java.util.List;
 public class ConditionNode extends BaseNode {
     private String condition;
     private List<BaseNode> elseCondition;
+    private ElseNode elseNode;
 
     public ConditionNode(String condition) {
         super();
@@ -39,5 +40,9 @@ public class ConditionNode extends BaseNode {
     public void addElse(BaseNode node) {
         node.setLevel(getNextLevel());
         elseCondition.add(node);
+    }
+
+    public void setElse(ElseNode elseNode){
+        this.elseNode=elseNode;
     }
 }
