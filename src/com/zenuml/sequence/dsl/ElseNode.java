@@ -21,7 +21,7 @@ public class ElseNode extends BaseNode {
         }
         printChindren(output);
         printIndent(output);
-        output.append("){\n");
+        output.append("}\n");
 
     }
 
