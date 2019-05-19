@@ -3,6 +3,11 @@ package com.zenuml.sequence.dsl;
 public class ElseNode extends BaseNode {
     private final String condition;
 
+    public ElseNode() {
+        super();
+        this.condition=null;
+    }
+
     public ElseNode(String condition) {
         super();
         this.condition =condition;

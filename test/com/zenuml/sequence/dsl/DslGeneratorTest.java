@@ -45,6 +45,7 @@ public class DslGeneratorTest {
         BaseNode function1 = new FunctionNode("Class1","function()");
         BaseNode function2 = new FunctionNode("Class2","function()");
         ConditionNode condition = (ConditionNode)root.addChild(new ConditionNode("condition"));
+        ElseNode elseNode = new ElseNode();
         condition.addChild(function1);
         condition.addElse(function2);
         checkDslResult(root,"file3");
